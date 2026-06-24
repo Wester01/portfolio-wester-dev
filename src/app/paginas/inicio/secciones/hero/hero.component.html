@@ -1,0 +1,69 @@
+<section
+  id="inicio"
+  class="relative overflow-hidden pt-28 pb-20 md:pt-44 md:pb-28"
+>
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,224,176,0.10),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(128,64,224,0.12),transparent_30%)]"
+  ></div>
+
+  <div
+    class="relative mx-auto grid max-w-6xl gap-10 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8"
+  >
+    <div class="relative order-1 mx-auto flex w-full max-w-xs items-center justify-center sm:max-w-sm lg:order-2 lg:max-w-md">
+      <div
+        class="absolute inset-8 rounded-full bg-gradient-to-br from-[#10E0B0]/20 via-[#3082DF]/15 to-[#8040E0]/20 blur-3xl"
+      ></div>
+
+      <div
+        class="relative z-10 rounded-[2rem] border border-white/10 bg-white/[0.03] p-5 shadow-2xl shadow-[#10E0B0]/10 sm:p-6"
+      >
+        <img
+          src="/images/logo-wester.webp"
+          alt="Logo de Wester Dev"
+          class="w-48 object-contain drop-shadow-2xl sm:w-64 lg:w-96"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+    <div class="order-2 lg:order-1">
+      <p
+        class="mb-5 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-[#10E0B0]"
+      >
+        {{ contenido.marca }}
+      </p>
+
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl">
+        {{ contenido.nombre }}
+      </h1>
+
+      <p class="mt-4 text-lg font-medium text-[#A7B0C0] sm:text-xl">
+        {{ contenido.rol }} · {{ contenido.marca }}
+      </p>
+
+      <p class="mt-6 max-w-2xl text-base leading-7 text-[#A7B0C0] sm:text-lg">
+        {{ contenido.descripcion }}
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2">
+        @for (tecnologia of contenido.tecnologias; track tecnologia) {
+          <app-chip-tecnologia [texto]="tecnologia" />
+        }
+      </div>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        @for (accion of contenido.acciones; track accion.texto) {
+          <app-boton
+            [texto]="accion.texto"
+            [destino]="accion.destino"
+            [tipo]="accion.tipo"
+            [externo]="accion.externo ?? false"
+            [aria]="accion.aria ?? null"
+          />
+        }
+      </div>
+    </div>
+  </div>
+</section>

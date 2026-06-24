@@ -5,12 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:portfolio": "node dist/portfolio/server/server.mjs"
+    "audit:prod": "npm audit --omit=dev"
   },
   "private": true,
-  "packageManager": "npm@11.11.0",
+  "packageManager": "npm@10.9.8",
   "dependencies": {
     "@angular/common": "^21.2.0",
     "@angular/compiler": "^21.2.0",

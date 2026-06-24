@@ -1,0 +1,46 @@
+<section id="contacto" class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+    <div
+      class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 md:p-10"
+    >
+      <div
+        class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#8040E0]/20 blur-3xl"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-[#10E0B0]/10 blur-3xl"
+      ></div>
+
+      <div class="relative">
+        <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[#10E0B0]">
+          Contacto
+        </p>
+
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          {{ contenido.titulo }}
+        </h2>
+
+        <p class="mt-4 max-w-2xl text-base leading-7 text-[#A7B0C0] sm:text-lg">
+          {{ contenido.descripcion }}
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          @for (accion of contenido.acciones; track accion.url) {
+            <app-boton
+              [texto]="accion.nombre"
+              [destino]="accion.url"
+              tipo="secundaria"
+              [externo]="accion.externo"
+              [aria]="'Abrir ' + accion.nombre + ' de Guillermo Romero'"
+            />
+          }
+        </div>
+
+        <p class="mt-6 max-w-2xl text-sm leading-6 text-[#6E7688]">
+          Por privacidad, este portfolio no expone email, teléfono ni CV descargable en esta primera versión.
+          El contacto profesional se centraliza mediante LinkedIn y GitHub.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<section id="sobre-mi" class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+    <app-titulo-seccion
+      etiqueta="Perfil"
+      [titulo]="contenido.titulo"
+      descripcion="Una visión técnica, visual y práctica aplicada al desarrollo de productos digitales."
+    />
+
+    <div class="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
+      <div class="relative mx-auto w-full max-w-xs">
+        <div
+          class="absolute -inset-6 -z-10 rounded-full bg-gradient-to-br from-[#10E0B0]/10 to-[#8040E0]/10 blur-3xl"
+        ></div>
+
+        <div
+          class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-2 shadow-2xl shadow-[#10E0B0]/10"
+        >
+          <img
+            [src]="contenido.imagen"
+            [alt]="contenido.alt"
+            class="aspect-[4/5] w-full rounded-2xl object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+        <div class="space-y-5 text-base leading-7 text-[#A7B0C0]">
+          @for (parrafo of contenido.parrafos; track parrafo) {
+            <p>
+              {{ parrafo }}
+            </p>
+          }
+        </div>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <p class="text-sm font-semibold text-white">Base técnica</p>
+            <p class="mt-2 text-sm leading-6 text-[#A7B0C0]">
+              DAW, SMR y experiencia en desarrollo web e IT.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <p class="text-sm font-semibold text-white">Automatización</p>
+            <p class="mt-2 text-sm leading-6 text-[#A7B0C0]">
+              Python, IA generativa y herramientas propias.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <p class="text-sm font-semibold text-white">Identidad visual</p>
+            <p class="mt-2 text-sm leading-6 text-[#A7B0C0]">
+              Criterio de composición, marca y experiencia de usuario.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

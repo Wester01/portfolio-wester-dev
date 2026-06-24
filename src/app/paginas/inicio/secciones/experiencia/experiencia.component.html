@@ -1,0 +1,49 @@
+<section id="experiencia" class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+    <app-titulo-seccion
+      etiqueta="Experiencia"
+      titulo="Trayectoria técnica relevante"
+      descripcion="Experiencia seleccionada para mostrar desarrollo web, digitalización, soporte IT y proyectos aplicados."
+    />
+
+    <div class="relative space-y-6 before:absolute before:left-3 before:top-0 before:h-full before:w-px before:bg-white/10">
+      @for (experiencia of experiencias; track experiencia.id) {
+        <article class="relative pl-10">
+          <div
+            class="absolute left-0 top-2 h-6 w-6 rounded-full border border-[#10E0B0]/30 bg-[#020106] p-1"
+            aria-hidden="true"
+          >
+            <div class="h-full w-full rounded-full bg-[#10E0B0]"></div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-6">
+            <p class="text-sm font-medium text-[#10E0B0]">
+              {{ experiencia.periodo }}
+            </p>
+
+            <h3 class="mt-2 text-xl font-semibold text-white">
+              {{ experiencia.rol }}
+            </h3>
+
+            <p class="mt-1 text-sm text-[#A7B0C0]">
+              {{ experiencia.empresa }}
+            </p>
+
+            <p class="mt-4 text-sm leading-6 text-[#A7B0C0]">
+              {{ experiencia.descripcion }}
+            </p>
+
+            <ul class="mt-5 space-y-2">
+              @for (punto of experiencia.puntos; track punto) {
+                <li class="flex gap-3 text-sm leading-6 text-[#A7B0C0]">
+                  <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#10E0B0]"></span>
+                  <span>{{ punto }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

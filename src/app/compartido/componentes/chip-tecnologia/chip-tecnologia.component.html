@@ -1,0 +1,13 @@
+<span
+  class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium transition"
+  [class.border-white/10]="!destacado()"
+  [class.bg-white/[0.04]]="!destacado()"
+  [class.text-[#A7B0C0]]="!destacado()"
+  [class.hover:border-[#10E0B0]/30]="!destacado()"
+  [class.hover:text-white]="!destacado()"
+  [class.border-[#10E0B0]/20]="destacado()"
+  [class.bg-[#10E0B0]/5]="destacado()"
+  [class.text-[#D9FFF7]]="destacado()"
+>
+  {{ texto() }}
+</span>

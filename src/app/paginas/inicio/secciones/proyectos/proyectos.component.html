@@ -1,0 +1,26 @@
+<section id="proyectos" class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+    <app-titulo-seccion
+      etiqueta="Proyectos"
+      titulo="Soluciones reales y herramientas propias"
+      descripcion="Una selección de proyectos donde el diseño, la ingeniería y la automatización resuelven problemas concretos."
+    />
+
+    <div class="space-y-5">
+      @for (proyecto of proyectos; track proyecto.id) {
+        <div
+          #tarjetaProyecto
+          [attr.data-proyecto-id]="proyecto.id"
+          class="scroll-mt-28 md:scroll-mt-40"
+        >
+          <app-tarjeta-proyecto
+            [proyecto]="proyecto"
+            [activa]="estaActivo(proyecto.id)"
+            [atenuada]="estaAtenuado(proyecto.id)"
+            (alternar)="alternarProyecto($event)"
+          />
+        </div>
+      }
+    </div>
+  </div>
+</section>

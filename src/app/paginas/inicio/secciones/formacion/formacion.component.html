@@ -1,0 +1,37 @@
+<section id="formacion" class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+    <app-titulo-seccion
+      etiqueta="Formación"
+      titulo="Base técnica y especialización continua"
+      descripcion="Formación reglada en desarrollo y sistemas, complementada con especialización en ciberseguridad, Python y machine learning."
+    />
+
+    <div class="grid gap-4 md:grid-cols-2">
+      @for (formacion of formaciones; track formacion.id) {
+        <article class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <h3 class="font-semibold text-white">
+            {{ formacion.titulo }}
+          </h3>
+
+          <p class="mt-2 text-sm text-[#A7B0C0]">
+            {{ formacion.centro }}
+          </p>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            @if (formacion.periodo) {
+              <span class="text-xs font-medium uppercase tracking-[0.16em] text-[#10E0B0]">
+                {{ formacion.periodo }}
+              </span>
+            }
+
+            @if (formacion.estado) {
+              <span class="text-xs font-medium uppercase tracking-[0.16em] text-[#8040E0]">
+                {{ formacion.estado }}
+              </span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

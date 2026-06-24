@@ -1,0 +1,20 @@
+@if (destino() && !deshabilitado()) {
+  <a
+    [href]="destino()"
+    [target]="target()"
+    [rel]="rel()"
+    [attr.aria-label]="aria()"
+    [class]="clases()"
+  >
+    {{ texto() }}
+  </a>
+} @else {
+  <button
+    type="button"
+    [disabled]="deshabilitado()"
+    [attr.aria-label]="aria()"
+    [class]="clases()"
+  >
+    {{ texto() }}
+  </button>
+}

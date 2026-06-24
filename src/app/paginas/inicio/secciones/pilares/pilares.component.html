@@ -1,0 +1,32 @@
+<section class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+    <app-titulo-seccion
+      etiqueta="Diferenciales"
+      titulo="Una mezcla poco habitual"
+      descripcion="Desarrollo, automatización y criterio visual aplicados a productos web reales."
+    />
+
+    <div class="grid gap-4 md:grid-cols-3">
+      @for (pilar of pilares; track pilar.id) {
+        <article
+          class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-[#10E0B0]/30 hover:bg-white/[0.05]"
+        >
+          <div
+            class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-bold text-[#10E0B0]"
+            aria-hidden="true"
+          >
+            {{ obtenerIcono(pilar.icono) }}
+          </div>
+
+          <h3 class="text-lg font-semibold text-white">
+            {{ pilar.titulo }}
+          </h3>
+
+          <p class="mt-3 text-sm leading-6 text-[#A7B0C0]">
+            {{ pilar.descripcion }}
+          </p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
