@@ -2,6 +2,71 @@ import { Proyecto } from '../modelos/proyectos.model';
 
 export const proyectos: Proyecto[] = [
   {
+    id: 'life-iris',
+    titulo: 'Life & Iris',
+    estado: 'Proyecto full stack desplegado | Repositorio',
+    resumen:
+      'Portal web premium con Angular y panel administrativo protegido mediante autenticación real con JWT.',
+    descripcion:
+      'Life & Iris es una aplicación full stack desarrollada para una marca real del sector bienestar. El proyecto combina un portal público responsive con un panel privado llamado Oráculo Admin, protegido mediante login real, backend propio, base de datos PostgreSQL y despliegue completo en servicios cloud.',
+    problema:
+      'Crear una presencia digital profesional para una marca de bienestar, incorporando una zona administrativa privada sin exponer datos reales del cliente y manteniendo una arquitectura preparada para evolucionar.',
+    solucion:
+      'Desarrollo de una SPA en Angular con separación entre portal público y panel privado, conectada a una API REST en Node.js y Express. El acceso administrativo se protege con JWT, usuario persistido en PostgreSQL mediante Prisma y despliegue independiente en Netlify, Render y Neon.',
+    puntosTecnicos: [
+      'Frontend desarrollado con Angular y TypeScript',
+      'Arquitectura modular con separación entre público y privado',
+      'Panel administrativo protegido con guards',
+      'Interceptor HTTP para sesión JWT',
+      'API REST con Node.js, Express y TypeScript',
+      'Autenticación real con JWT y bcrypt',
+      'Base de datos PostgreSQL en Neon',
+      'ORM con Prisma 7',
+      'Despliegue frontend en Netlify',
+      'Despliegue backend en Render',
+      'Documentación técnica completa',
+      'Auditoría de secretos con Gitleaks'
+    ],
+    tecnologias: [
+      'Angular',
+      'TypeScript',
+      'SCSS',
+      'Node.js',
+      'Express',
+      'Prisma',
+      'PostgreSQL',
+      'JWT',
+      'Netlify',
+      'Render',
+      'Neon'
+    ],
+    acciones: [
+      {
+        texto: 'Ver demo',
+        destino: 'https://life-iris-demo.netlify.app/',
+        tipo: 'principal',
+        externo: true,
+        aria: 'Abrir demo online de Life & Iris'
+      },
+      {
+        texto: 'Frontend',
+        destino: 'https://github.com/Wester01/demo-app-salud',
+        tipo: 'secundaria',
+        externo: true,
+        aria: 'Abrir repositorio frontend de Life & Iris en GitHub'
+      },
+      {
+        texto: 'Backend',
+        destino: 'https://github.com/Wester01/demo-app-salud-api',
+        tipo: 'secundaria',
+        externo: true,
+        aria: 'Abrir repositorio backend de Life & Iris en GitHub'
+      }
+    ],
+    nota:
+      'La identidad visual se muestra con autorización del cliente. Los datos administrativos, métricas, usuarios e interacciones son ficticios o adaptados para demo.'
+  },
+  {
     id: 'la-nueva-ola-records',
     titulo: 'La Nueva Ola Records',
     estado: 'Proyecto real en producción',
